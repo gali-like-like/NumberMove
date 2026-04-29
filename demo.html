@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注意力测试</title>
+    <!-- 这是一个注意力游戏,玩法很简单,就是将1到25的数字在规定时间内按照升序方式全部移到橙色方块内就算成功--->
+    <style>
+        td {
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #main td {
+            background-color: bisque;
+        }
+        table {
+            table-layout: fixed;
+        }
+        #second td {
+            background-color: chocolate;
+        }
+        #contain {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 1000px;
+        }
+        #main_contain {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            height: 560px;
+            width: 1000px;
+        }
+        body {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .btns {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 200px;
+        }
+        .btns button {
+            outline: none;
+        }
+        .foot {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="main_contain">
+        <div id="contain">
+            <table id="main">
+                <tbody>
+                    <tr>
+                        <td><div>1</div></td>
+                        <td><div>1</div></td>
+                        <td><div>1</div></td>
+                        <td><div>1</div></td>
+                        <td><div>1</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>2</div></td>
+                        <td><div>2</div></td>
+                        <td><div>2</div></td>
+                        <td><div>2</div></td>
+                        <td><div>2</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                        <td><div>3</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="second">
+                <tbody>
+                    <tr>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"   ondragover="dragoverHandle(event)">         </tr>
+                    <tr>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)">      </tr>
+                    <tr>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"   ondragover="dragoverHandle(event)">         </tr>
+                    <tr>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"   ondragover="dragoverHandle(event)">         </tr>
+                    <tr>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                        <td ondragenter="dragEnterHandle()" ondragleave="dragleaveHandle()"  ondragover="dragoverHandle(event)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="foot">
+            <div class="btns">
+                <button onclick="update()">新题目</button>
+                <button onclick="submit()">提交</button>
+                <button onclick="reset()">重置</button>
+            </div>
+            <div>
+                <p id="availableTimeP">剩余时间</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function dragHandle(event) {
+        console.log(`event:${JSON.stringify(event)}`);
+    }
+
+    function dragoverHandle(event) {
+        event.preventDefault();
+          // 关键修改2：设置拖拽效果类型，兼容不同浏览器
+        console.log("阻止")
+    }
+
+    function dragEnterHandle() {
+        console.log("进入目标");
+    }
+
+    function dragleaveHandle() {
+        console.log("离开目标");
+    }
+
+    function dropHandle(event) {
+  // 将被拖动元素移动到选定的目标元素中
+        console.log(`放置袁术 数据:${event.dataTransfer.getData("text")}`);
+    }
+    // 保存拖拽元素的引用
+    let dragged = null;
+
+    const nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+    function shuffleArray(array) {
+    // 创建原数组的浅拷贝，避免修改原数组
+        const newArray = [...array];
+    // 从数组末尾开始向前遍历
+        for (let i = newArray.length - 1; i > 0; i--) {
+            // 生成 0 到 i 之间的随机索引（包含i）
+            const randomIndex = Math.floor(Math.random() * (i + 1));
+            // 交换当前元素和随机位置的元素
+            [newArray[i], newArray[randomIndex]] = [newArray[randomIndex], newArray[i]];
+        }
+        return newArray;
+    }
+
+    // 记住上一次的随机数组
+    // 1. 打乱数组,游戏刚开的的数组
+    let shuffledArray = shuffleArray(nums);
+    // 2. 初始化打乱方块
+    function shuffleSquare(array) {
+        let i = 0;
+        const elements = document.querySelectorAll("#main td div");
+        for (let e of elements) {
+            let num = array[i];
+            e.innerText = num;
+            e.addEventListener("drag",dragHandle);
+            e.addEventListener("dragstart",(e) => {
+                console.log(`element :${e.target.nodeValue}`);
+                dragged = e.target;
+            })
+            console.log(`el:${e.innerText}`);
+            i++;
+        }
+    }
+    //3. 初始化空白方块
+    function initEmptySquare() {
+        const emptyList = document.querySelectorAll("#second td");
+        let z = 0;
+        for(let empty of emptyList) {
+            empty.innerText = null;
+            empty.addEventListener("drop",(e) => {
+                dragged.parentNode.remove(dragged);
+                e.target.appendChild(dragged);
+            })
+        }
+    }
+    // 重置游戏,或者说清空游戏
+    function reset() {
+        shuffleSquare(shuffledArray);
+        initEmptySquare();
+    }
+
+    // 更新题目
+    function update() {
+        availableTime = totalTime;
+        shuffledArray = shuffleArray(nums);
+        shuffleSquare(shuffledArray);
+        initEmptySquare();
+    }
+
+    // 提交答案
+    function submit() {
+        if (availableTime < 0) {
+            alert("已经超过作答时间!,成绩无效");
+            return;
+        }
+        const emptyList = document.querySelectorAll("#second td div");
+        if(emptyList.length != 25) {
+            alert("作答错误");
+            return;
+        } else {
+            const emptyTexts = Array.from(emptyList).map(empty => empty.innerText);
+            console.log(emptyTexts); // 得到所有元素的文本组成的数组
+            let ownAnswer = JSON.stringify(emptyList);
+            let standardAnswer = JSON.stringify(nums);
+            if(ownAnswer === standardAnswer) {
+                alert("作答正确,自动更新题目");
+                availableTime = totalTime;
+                return;
+            }
+        }
+    }
+
+    // 加载题目
+    reset();
+    const totalTime = 2 * 60 * 1000;
+    let availableTime = 2 * 60 * 1000
+    let timeId = setInterval(() => {
+        const p = document.querySelector("#availableTimeP");
+        if(availableTime < 0) {
+            p.innerText = "时间已截至";
+            timeId = null;
+        } else {
+            availableTime = availableTime - 1000;
+            let secondTime = Math.floor(availableTime%(60*1000)/1000,0);
+            let minTime = Math.floor(availableTime/(60 * 1000),0);
+            let showTime = `0${minTime}:${secondTime < 10?"0"+secondTime:secondTime}`;
+            console.log(showTime);
+            p.innerText = "剩余时间 "+showTime;
+        }
+    }, 1000);
+</script>
+</html>
